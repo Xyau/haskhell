@@ -1,3 +1,5 @@
+import Data.Char
+
 seven :: Int -> Int
 seven x = 7
 
@@ -49,3 +51,9 @@ swap (x, y) = (y, x)
 
 f1 :: (a) -> (a)
 f1 x = let (y,z) = (x,x) in y
+
+greaterThan (x,y) 
+	| x > y = True
+	| otherwise = False
+
+f (x,y) = let z = x + y in g (z,y) where g (a,b) = a - b
