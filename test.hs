@@ -5,9 +5,9 @@ seven x = 7
 
 sign :: Int -> Int
 sign x 
-	| x > 0 = 1
-	| x < 0 = -1
-	| otherwise =0
+    | x > 0 = 1
+    | x < 0 = -1
+    | otherwise =0
 
 signIf :: Int -> Int
 signIf x =  
@@ -42,18 +42,22 @@ divisible (x,y) =
         else False
 
 multiple :: (Int, Int) -> Bool
-multiple (x, y) = 
-    if mod x y == 0 then True
-        else False
+multiple (x, y) = mod x y == 0 
+
 
 swap :: (a, b) -> (b, a)
 swap (x, y) = (y, x)
 
 f1 :: (a) -> (a)
 f1 x = let (y,z) = (x,x) in y
+           
+greaterThan :: (Ord a) => a -> a-> Bool
+greaterThan = (\x y -> (x > y))
 
-greaterThan (x,y) 
-	| x > y = True
-	| otherwise = False
+twice f = \x -> f (f x)
+	
+data SensacionTermica = HaceFrio | HaceCalor
 
-f (x,y) = let z = x + y in g (z,y) where g (a,b) = a - b
+data Shape = Circle Float | Rect Float Float
+
+getH (Rect x y) = x
